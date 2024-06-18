@@ -1,6 +1,6 @@
 # 镜像仓库使用方法
 
-**images.txt**
+[**images.txt**](https://github.com/fuzhengwei/docker-image-pusher/blob/main/images.txt)
 
 ```java
 mysql:8.0.32
