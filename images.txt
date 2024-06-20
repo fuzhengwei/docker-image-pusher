@@ -1,3 +1,4 @@
+portainer/portainer:1.25.0
 mysql:8.0.32
 phpmyadmin:5.2.1
 redis:6.2
