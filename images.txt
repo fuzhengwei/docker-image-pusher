@@ -6,3 +6,4 @@ phpmyadmin:5.2.1
 redis:6.2
 spryker/redis-commander:0.8.0
 rabbitmq:3.12.9
+livinphp/rocketmq:5.1.0
