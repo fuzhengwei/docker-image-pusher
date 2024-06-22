@@ -1,1 +1,1 @@
-fuzhengwei/big-market-app:3.0
+fuzhengwei/big-market-app:3.1
