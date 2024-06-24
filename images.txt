@@ -1,2 +1,5 @@
-bitnami/prometheus:2.47.2
-grafana/grafana:10.2.0
+alpine:3.18.2
+canal/canal-server:v1.1.7
+coopersoft/canal-adapter:v1.1.6
+elasticsearch:7.17.14
+kibana:7.17.14
