@@ -1,1 +1,2 @@
-nginx:1.25.1
+bitnami/prometheus:2.47.2
+grafana/grafana:10.2.0
