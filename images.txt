@@ -1,1 +1,2 @@
-rancher/novnc:latest
+zookeeper:3.9.0
+kuschzzp/xxl-job-aarch64:2.4.0
