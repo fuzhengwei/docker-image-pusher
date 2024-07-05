@@ -1,2 +1,3 @@
-zookeeper:3.9.0
-kuschzzp/xxl-job-aarch64:2.4.0
+nacos/nacos-server:v2.2.3-slim
+xuxueli/xxl-job-admin:2.4.0
+livinphp/rocketmq:5.1.0
