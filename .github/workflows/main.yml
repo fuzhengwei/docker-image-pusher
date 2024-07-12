@@ -1,0 +1,42 @@
+name: Pull and Push MySQL Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+
+    - name: Pull MySQL image from Docker Hub
+      run: docker pull mysql:latest
+
+    - name: Save Docker image to a tar file
+      run: docker save mysql:latest -o mysql_latest.tar
+
+    - name: Copy Docker image to remote server
+      uses: appleboy/scp-action@v0.1.1
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: mysql_latest.tar
+        target: /tmp/mysql_latest.tar
+
+    - name: Load Docker image on remote server
+      uses: appleboy/ssh-action@v0.1.1
+      with:
+        host: ${{ secrets.REMOTE_HOST }}
+        username: ${{ secrets.REMOTE_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          docker load -i /tmp/mysql_latest.tar
+       #  docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=root mysql:latest
