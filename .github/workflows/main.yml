@@ -22,8 +22,5 @@ jobs:
     - name: Tag MySQL image for private registry
       run: docker tag mysql:latest 116.198.201.187:5000/mysql:latest
 
-    - name: Log in to private Docker registry
-      run: docker login 116.198.201.187:5000
-
     - name: Push MySQL image to private registry
       run: docker push 116.198.201.187:5000/mysql:latest
