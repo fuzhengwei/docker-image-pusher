@@ -19,24 +19,11 @@ jobs:
     - name: Pull MySQL image from Docker Hub
       run: docker pull mysql:latest
 
-    - name: Save Docker image to a tar file
-      run: docker save mysql:latest -o mysql_latest.tar
+    - name: Tag MySQL image for private registry
+      run: docker tag mysql:latest 116.198.201.187:5000/mysql:latest
 
-    - name: Copy Docker image to remote server
-      uses: appleboy/scp-action@v0.1.1
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        password: ${{ secrets.REMOTE_PASSWORD }}
-        source: mysql_latest.tar
-        target: /tmp/mysql_latest.tar
+    - name: Log in to private Docker registry
+      run: docker login 116.198.201.187:5000
 
-    - name: Load Docker image on remote server
-      uses: appleboy/ssh-action@v0.1.1
-      with:
-        host: ${{ secrets.REMOTE_HOST }}
-        username: ${{ secrets.REMOTE_USER }}
-        password: ${{ secrets.REMOTE_PASSWORD }}
-        script: |
-          docker load -i /tmp/mysql_latest.tar
-          # docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=root mysql:latest
+    - name: Push MySQL image to private registry
+      run: docker push 116.198.201.187:5000/mysql:latest
