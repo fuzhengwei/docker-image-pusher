@@ -27,7 +27,7 @@ jobs:
       with:
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        password: ${{ secrets.REMOTE_PASSWORD }}
         source: mysql_latest.tar
         target: /tmp/mysql_latest.tar
 
@@ -36,7 +36,7 @@ jobs:
       with:
         host: ${{ secrets.REMOTE_HOST }}
         username: ${{ secrets.REMOTE_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        password: ${{ secrets.REMOTE_PASSWORD }}
         script: |
           docker load -i /tmp/mysql_latest.tar
-       #  docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=root mysql:latest
+          # docker run -d --name mysql_container -e MYSQL_ROOT_PASSWORD=root mysql:latest
