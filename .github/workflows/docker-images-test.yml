@@ -3,7 +3,7 @@ name: Pull and Push Docker Images Test
 on:
   push:
     branches:
-      - main-close
+      - main
 
 jobs:
   deploy:
