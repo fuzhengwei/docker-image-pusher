@@ -35,9 +35,10 @@ jobs:
       - name: Read images.txt and process each image
         run: |
           while IFS= read -r image; do
+          
             # 忽略空行与注释
-            [[ -z "$line" ]] && continue
-            if echo "$line" | grep -q '^\s*#'; then
+            [[ -z "$image" ]] && continue
+            if echo "$image" | grep -q '^\s*#'; then
                 continue
             fi
           
@@ -45,6 +46,14 @@ jobs:
             docker pull $image
             image_name=$(echo $image | awk -F':' '{print $1}')
             image_tag=$(echo $image | awk -F':' '{print $2}')
+          
+            # 如果没有标签，默认使用 'latest'
+            if [[ -z "$image_tag" ]]; then
+              image_tag="latest"
+            fi
+          
             docker tag $image 116.198.201.187:5000/$image_name:$image_tag
             docker push 116.198.201.187:5000/$image_name:$image_tag
+          
           done < images.txt
+
