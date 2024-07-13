@@ -3,7 +3,7 @@ name: Pull and Push MySQL Docker Image
 on:
   push:
     branches:
-      - main
+      - main-close
 
 jobs:
   deploy:

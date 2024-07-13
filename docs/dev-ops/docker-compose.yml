@@ -1,0 +1,12 @@
+# 命令执行 docker-compose -f docker-compose.yml up -d
+version: '3.8'
+
+services:
+  registry:
+    image: library/registry:latest
+    container_name: docker-registry
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - /docker/var/lib/registry:/var/lib/registry
