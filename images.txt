@@ -1,1 +1,2 @@
-library/registry:latest
+phpmyadmin:5.2.1
+redis:6.2
