@@ -6,9 +6,10 @@ on:
     branches: [ main ]
 
 env:
-  PRIVATE_REGISTRY: "116.198.201.187:5000"
-  PRIVATE_REGISTRY_USER: "${{ secrets.PRIVATE_REGISTRY_USER }}"
-  PRIVATE_REGISTRY_PASSWORD: "${{ secrets.PRIVATE_REGISTRY_PASSWORD }}"
+  ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
+  ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
+  ALIYUN_REGISTRY_USER: "${{ secrets.ALIYUN_REGISTRY_USER }}"
+  ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
 
 jobs:
 
@@ -59,7 +60,6 @@ jobs:
 
       - name: Build and push image to private registry
         run: |
-          docker login -u $PRIVATE_REGISTRY_USER -p $PRIVATE_REGISTRY_PASSWORD $PRIVATE_REGISTRY
           # 数据预处理,判断镜像是否重名
           declare -A duplicate_images
           declare -A temp_map
@@ -100,69 +100,69 @@ jobs:
               fi       
           done < images.txt
           
+          while IFS= read -r line || [ -n "$line" ]; do
           
-        while IFS= read -r line || [ -n "$line" ]; do
-            # 忽略空行与注释
-            [[ -z "$line" ]] && continue
-          if echo "$line" | grep -q '^\s*#'; then
-              continue
-          fi
-        
-          echo "docker pull $line"
-          docker pull $line
-          platform=$(echo "$line" | awk -F'--platform[ =]' '{if (NF>1) print $2}' | awk '{print $1}')
-          echo "platform is $platform"
-          # 如果存在架构信息 将架构信息拼到镜像名称前面
-          if [ -z "$platform" ]; then
-              platform_prefix=""
-          else
-              platform_prefix="${platform//\//_}_"
-          fi
-          echo "platform_prefix is $platform_prefix"
-          # 获取镜像的完整名称，例如kasmweb/nginx:1.25.3（命名空间/镜像名:版本号）
-          image=$(echo "$line" | awk '{print $NF}')
-
-          # 获取 镜像名:版本号  例如nginx:1.25.3
-          image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
-          # 获取命名空间 例如kasmweb  这里有种特殊情况 docker.io/nginx，把docker.io当成命名空间，也OK
-          name_space=$(echo "$image" | awk -F'/' '{if (NF==3) print $2; else if (NF==2) print $1; else print ""}')
-          # 获取镜像名例  例如nginx
-          image_name=$(echo "$image_name_tag" | awk -F':' '{print $1}')
-        
-          name_space_prefix=""
-          # 如果镜像名重名
-          if [[ -n "${duplicate_images[$image_name]}" ]]; then
-             #如果命名空间非空，将命名空间加到前缀
-             if [[ -n "${name_space}" ]]; then
-                name_space_prefix="${name_space}_"
-             fi
-          fi
-        
-          # 将@sha256:等字符删除
-          image_name_tag="${image_name_tag%%@*}"
-          new_image="$PRIVATE_REGISTRY/$platform_prefix$name_space_prefix$image_name_tag"
-          latest_image="$PRIVATE_REGISTRY/$platform_prefix$name_space_prefix$image_name:latest"
-        
-          echo "docker tag $image $new_image"
-          docker tag $image $new_image
-          echo "docker push $new_image"
-          docker push $new_image
-
-          echo "docker tag $image $latest_image"
-          docker tag $image $latest_image
-          echo "docker push $latest_image"
-          docker push $latest_image
-        
-          echo "开始清理磁盘空间"
-          echo "=============================================================================="
-        
-          df -hT
-          echo "=============================================================================="
-          docker rmi $image
-          docker rmi $new_image
-          echo "磁盘空间清理完毕"
-          echo "=============================================================================="
-          df -hT
-          echo "=============================================================================="     
-        
-        done < images.txt
+              # 忽略空行与注释
+              [[ -z "$line" ]] && continue
+              if echo "$line" | grep -q '^\s*#'; then
+                  continue
+              fi
+            
+              echo "docker pull $line"
+              docker pull $line
+              platform=$(echo "$line" | awk -F'--platform[ =]' '{if (NF>1) print $2}' | awk '{print $1}')
+              echo "platform is $platform"
+              # 如果存在架构信息 将架构信息拼到镜像名称前面
+              if [ -z "$platform" ]; then
+                  platform_prefix=""
+              else
+                  platform_prefix="${platform//\//_}_"
+              fi
+              echo "platform_prefix is $platform_prefix"
+              # 获取镜像的完整名称，例如kasmweb/nginx:1.25.3（命名空间/镜像名:版本号）
+              image=$(echo "$line" | awk '{print $NF}')
+  
+              # 获取 镜像名:版本号  例如nginx:1.25.3
+              image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
+              # 获取命名空间 例如kasmweb  这里有种特殊情况 docker.io/nginx，把docker.io当成命名空间，也OK
+              name_space=$(echo "$image" | awk -F'/' '{if (NF==3) print $2; else if (NF==2) print $1; else print ""}')
+              # 获取镜像名例  例如nginx
+              image_name=$(echo "$image_name_tag" | awk -F':' '{print $1}')
+            
+              name_space_prefix=""
+              # 如果镜像名重名
+              if [[ -n "${duplicate_images[$image_name]}" ]]; then
+                 #如果命名空间非空，将命名空间加到前缀
+                 if [[ -n "${name_space}" ]]; then
+                    name_space_prefix="${name_space}_"
+                 fi
+              fi
+            
+              # 将@sha256:等字符删除
+              image_name_tag="${image_name_tag%%@*}"
+              new_image="116.198.201.187:5000/$platform_prefix$name_space_prefix$image_name_tag"
+              latest_image="116.198.201.187:5000/$platform_prefix$name_space_prefix$image_name:latest"
+            
+              echo "docker tag $image $new_image"
+              docker tag $image $new_image
+              echo "docker push $new_image"
+              docker push $new_image
+  
+              echo "docker tag $image $latest_image"
+              docker tag $image $latest_image
+              echo "docker push $latest_image"
+              docker push $latest_image
+            
+              echo "开始清理磁盘空间"
+              echo "=============================================================================="
+            
+              df -hT
+              echo "=============================================================================="
+              docker rmi $image
+              docker rmi $new_image
+              echo "磁盘空间清理完毕"
+              echo "=============================================================================="
+              df -hT
+              echo "=============================================================================="     
+          
+          done < images.txt
