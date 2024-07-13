@@ -52,7 +52,7 @@ jobs:
 
       - name: Configure Docker to use HTTP for private registry
         run: |
-          echo '{"insecure-registries":["116.198.201.187:5000"]}' | sudo tee /etc/docker/daemon.json
+          echo '{"insecure-registries":["$PRIVATE_REGISTRY"]}' | sudo tee /etc/docker/daemon.json
           sudo systemctl restart docker
 
       - name: Build and push image to private registry
