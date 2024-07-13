@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  PRIVATE_REGISTRY: "${{ secrets.$PRIVATE_REGISTRY }}"
+  PRIVATE_REGISTRY: "${{ secrets.PRIVATE_REGISTRY }}"
 
 jobs:
 
