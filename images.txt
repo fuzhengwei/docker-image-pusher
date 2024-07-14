@@ -1,2 +1,2 @@
-phpmyadmin:5.2.1
-redis:6.2
+nacos/nacos-server:v2.2.3-slim
+zookeeper:3.9.0
