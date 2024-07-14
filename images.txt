@@ -1,2 +1,1 @@
-nacos/nacos-server:v2.2.3-slim
-zookeeper:3.9.0
+rabbitmq:3.12.9

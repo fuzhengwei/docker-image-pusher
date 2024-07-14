@@ -1,4 +1,4 @@
-name: Pull and Push MySQL Docker Image
+name: Docker Images One
 
 on:
   push:
