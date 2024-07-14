@@ -1,1 +1,1 @@
-rabbitmq:3.12.9
+mysql:8.0.32
