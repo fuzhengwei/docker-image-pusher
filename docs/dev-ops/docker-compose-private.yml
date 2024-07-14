@@ -1,4 +1,4 @@
-# 命令执行 docker-compose -f docker-compose-private.yml up -d
+# 命令执行 docker-compose -f docker-compose-environment-private.yml up -d
 version: '3.9'
 services:
   # 注册中心 https://github.com/nacos-group/nacos-docker - 其他配置可参考(集群)
@@ -89,42 +89,42 @@ services:
 
   # RedisAdmin https://github.com/joeferner/redis-commander
   # 账密 admin/admin
-#  redis-admin:
-#    image: 116.198.201.187:5000/redis-commander:0.8.0
-#    container_name: redis-admin
-#    hostname: redis-commander
-#    restart: always
-#    ports:
-#      - 8081:8081
-#    environment:
-#      - REDIS_HOSTS=local:redis:6379
-#      - HTTP_USER=admin
-#      - HTTP_PASSWORD=admin
-#      - LANG=C.UTF-8
-#      - LANGUAGE=C.UTF-8
-#      - LC_ALL=C.UTF-8
-#    networks:
-#      - my-network
-#    depends_on:
-#      redis:
-#        condition: service_healthy
+  redis-admin:
+    image: 116.198.201.187:5000/redis-commander:0.8.0
+    container_name: redis-admin
+    hostname: redis-commander
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+      - HTTP_USER=admin
+      - HTTP_PASSWORD=admin
+      - LANG=C.UTF-8
+      - LANGUAGE=C.UTF-8
+      - LC_ALL=C.UTF-8
+    networks:
+      - my-network
+    depends_on:
+      redis:
+        condition: service_healthy
 
   # rabbitmq
   # 账密 admin/admin
   # rabbitmq-plugins enable rabbitmq_management
-#  rabbitmq:
-#    image: 116.198.201.187:5000/rabbitmq:3.12.9
-#    container_name: rabbitmq
-#    restart: always
-#    ports:
-#      - "5672:5672"
-#      - "15672:15672"
-#    environment:
-#      RABBITMQ_DEFAULT_USER: admin
-#      RABBITMQ_DEFAULT_PASS: admin
-#    command: rabbitmq-server
-#    volumes:
-#      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+  rabbitmq:
+    image: 116.198.201.187:5000/rabbitmq:3.12.9
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    command: rabbitmq-server
+    volumes:
+      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
 
   zookeeper:
     image: 116.198.201.187:5000/zookeeper:3.9.0
