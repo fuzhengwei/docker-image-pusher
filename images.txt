@@ -1,2 +1,4 @@
 spryker/redis-commander:0.8.0
 portainer/portainer
+portainer/agent:2.16.2
+jenkins/jenkins:2.439
