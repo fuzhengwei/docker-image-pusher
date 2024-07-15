@@ -1,1 +1,1 @@
-spryker/redis-commander:0.8.0
+ fuzhengwei/chatgpt-web:7.0
