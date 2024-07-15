@@ -1,1 +1,1 @@
- fuzhengwei/chatgpt-web:7.0
+fuzhengwei/chatgpt-web:7.1
