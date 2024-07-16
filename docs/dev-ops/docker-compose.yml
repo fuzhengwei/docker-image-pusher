@@ -3,7 +3,7 @@ version: '3.8'
 services:
   # docker run -dit --restart=always --name=docker-registry -p 5000:5000 -v /docker/var/lib/registry:/var/lib/registry library/registry:latest
   registry:
-    image: library/registry:latest
+    image: registry.cn-hangzhou.aliyuncs.com/xfg-studio/registry:latest
     container_name: docker-registry
     restart: always
     ports:
