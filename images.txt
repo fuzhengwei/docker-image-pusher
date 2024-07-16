@@ -1,1 +1,1 @@
-library/registry:latest
+portainer/portainer:latest
