@@ -1,4 +1,2 @@
-openjdk:8-jdk-alpine
-openjdk:17-jdk-alpine
 mysql:9.0.0
 mongo:7.0.12
