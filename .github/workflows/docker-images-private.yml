@@ -7,6 +7,8 @@ on:
 
 env:
   PRIVATE_REGISTRY: "${{ secrets.PRIVATE_REGISTRY }}"
+  PRIVATE_USERNAME: "${{ secrets.PRIVATE_USERNAME }}"
+  PRIVATE_PASSWD: "${{ secrets.PRIVATE_PASSWD }}"
 
 jobs:
 
@@ -142,6 +144,8 @@ jobs:
             
               echo "docker tag $image $new_image"
               docker tag $image $new_image
+              echo "docker login into $$PRIVATE_REGISTRY"
+              docker login $PRIVATE_REGISTRY -u $PRIVATE_USERNAME -p $PRIVATE_PASSWD
               echo "docker push $new_image"
               docker push $new_image
   
