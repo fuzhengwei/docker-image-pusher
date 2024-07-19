@@ -3,7 +3,8 @@ name: Docker Images Aliyun
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches:
+      - main-close
 
 env:
   ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
