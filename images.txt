@@ -1,7 +1,1 @@
-bladex/sentinel-dashboard:1.8.7
-prom/mysqld-exporter:v0.15.1
-oliver006/redis_exporter:alpine-amd64
-oliver006/redis_exporter:alpine-arm64
-oliver006/redis_exporter:v1.62.0
-prom/node-exporter:v1.8.2
-alpine:3.20.1
+jenkins/jenkins:2.439
