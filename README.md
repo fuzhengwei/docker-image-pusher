@@ -28,6 +28,7 @@ kafka-eagle:3.0.2
 logstash:7.14.2
 registry:latest
 portainer:latest
+jenkins/jenkins:2.439
 ```
 
 1. 在 `images.txt` 添加你需要的镜像（PR方式提交），你可以从 [https://hub.docker.com/](https://hub.docker.com/) 搜索需要的镜像后添加。
