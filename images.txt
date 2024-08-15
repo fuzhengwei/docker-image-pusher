@@ -1,1 +1,1 @@
-portainer/agent:2.16.2
+grafana/grafana
