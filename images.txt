@@ -1,1 +1,1 @@
-rustdesk/rustdesk-server-s6:latest
+bitnami/minio:2024.8.29
