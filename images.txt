@@ -1,1 +1,1 @@
-nginx:alpine
+bin20088/nginx:latest
