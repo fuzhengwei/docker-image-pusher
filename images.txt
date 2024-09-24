@@ -1,1 +1,1 @@
-bitnami/minio:2024.8.29
+nginx:alpine
