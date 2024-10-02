@@ -3,7 +3,7 @@ name: Docker Images Private
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ main-close ]
 
 env:
   PRIVATE_REGISTRY: "${{ secrets.PRIVATE_REGISTRY }}"
