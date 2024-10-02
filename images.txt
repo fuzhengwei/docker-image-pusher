@@ -1,1 +1,1 @@
-bin20088/nginx:latest
+bladex/sentinel-dashboard:1.7.2
