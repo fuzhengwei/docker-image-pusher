@@ -1,1 +1,1 @@
-fuzhengwei/chatgpt-web-app:5.1
+fuzhengwei/x-api-app:9.0
