@@ -1,1 +1,1 @@
-fuzhengwei/x-api-app:9.0
+canal-server:v1.1.6
