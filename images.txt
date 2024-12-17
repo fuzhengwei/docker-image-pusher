@@ -1,1 +1,2 @@
-canal/canal-server:v1.1.6
+xhofe/alist:v3.41.0-ffmpeg
+bililive/recorder:2.13.1
