@@ -1,2 +1,1 @@
-mysql:9.0.0
-mongo:7.0.12
+canal/canal-server:v1.1.6
