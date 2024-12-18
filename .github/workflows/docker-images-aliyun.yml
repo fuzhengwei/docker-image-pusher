@@ -75,10 +75,11 @@ jobs:
             echo "image $image"
             # 获取镜像名:版本号  例如nginx:1.25.3
             image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
+            image_name_tag=$$image
             echo "image_name_tag $image_name_tag"
             # 获取命名空间 例如kasmweb,  这里有种特殊情况 docker.io/nginx，把docker.io当成命名空间，也OK
             name_space=$(echo "$image" | awk -F'/' '{if (NF==3) print $2; else if (NF==2) print $1; else print ""}')
-            echo "name_space: $name_space"
+            echo "name_space: $name_spaccce"
             # 这里不要是空值影响判断
             name_space="${name_space}_"
             # 获取镜像名例如nginx
