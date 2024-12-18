@@ -74,7 +74,7 @@ jobs:
             image="${image%%@*}"
             echo "image $image"
             # 获取镜像名:版本号  例如nginx:1.25.3
-            image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
+            # image_name_tag=$(echo "$image" | awk -F'/' '{print $NF}')
             image_name_tag=$image
             echo "image_name_tag $image_name_tag"
             # 获取命名空间 例如kasmweb,  这里有种特殊情况 docker.io/nginx，把docker.io当成命名空间，也OK
