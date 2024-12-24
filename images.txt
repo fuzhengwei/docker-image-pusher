@@ -1,1 +1,1 @@
-canal/canal-server:v1.1.6
+mysql:8.0.40
