@@ -1,1 +1,1 @@
-mysql:8.0.40
+fatedier/frps:v0.60.0
