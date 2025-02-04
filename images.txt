@@ -1,1 +1,2 @@
 fuzhengwei/group-buy-market-app:1.2
+fuzhengwei/openjdk:8-jre-slim
