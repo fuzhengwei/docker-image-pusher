@@ -1,2 +1,1 @@
-fatedier/frps:v0.60.0
-fatedier/frpc:v0.60.0
+fuzhengwei/group-buy-market-app:1.0
