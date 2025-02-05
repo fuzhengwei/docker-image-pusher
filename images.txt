@@ -1,1 +1,1 @@
-fuzhengwei/group-buy-market-app:1.2
+fuzhengwei/group-buy-market-app:1.3
