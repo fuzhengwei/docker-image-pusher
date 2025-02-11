@@ -1,1 +1,1 @@
-fuzhengwei/group-buy-market-app:1.3
+neowitch/moneyprinterturbo:latest
