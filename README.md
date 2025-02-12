@@ -39,6 +39,8 @@ alpine:3.20.1
 jenkins:2.439
 fatedier/frps:v0.60.0 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/frps:v0.60.0
 fatedier/frpc:v0.60.0 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/frpc:v0.60.0
+neowitch/moneyprinterturbo:latest -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/moneyprinterturbo:latest
+ankane/pgvector:v0.5.0 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/pgvector:v0.5.0
 ```
 
 1. 在 `images.txt` 添加你需要的镜像（PR方式提交），你可以从 [https://hub.docker.com/](https://hub.docker.com/) 搜索需要的镜像后添加。
