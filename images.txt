@@ -1,1 +1,1 @@
-neowitch/moneyprinterturbo:latest
+ankane/pgvector:v0.5.0
