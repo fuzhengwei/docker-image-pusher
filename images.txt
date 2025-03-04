@@ -1,1 +1,1 @@
-ollama/ollama:0.5.10
+dpage/pgadmin4:9.1.0
