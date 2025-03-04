@@ -42,6 +42,7 @@ fatedier/frpc:v0.60.0 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studi
 neowitch/moneyprinterturbo:latest -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/moneyprinterturbo:latest
 ankane/pgvector:v0.5.0 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/pgvector:v0.5.0
 ollama/ollama:0.5.10 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/ollama:0.5.10
+dpage/pgadmin4:9.1.0 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/pgadmin4:9.1.0
 ```
 
 1. 在 `images.txt` 添加你需要的镜像（PR方式提交），你可以从 [https://hub.docker.com/](https://hub.docker.com/) 搜索需要的镜像后添加。
