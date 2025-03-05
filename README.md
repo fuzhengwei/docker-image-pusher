@@ -5,6 +5,7 @@
 ```java
 portainer:latest
 mysql:8.0.32
+mysql:8.4.4 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/mysql:8.4.4
 phpmyadmin:5.2.1
 redis:6.2
 redis:7.2
