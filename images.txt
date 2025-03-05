@@ -1,1 +1,1 @@
-dpage/pgadmin4:9.1.0
+mysql:8.4.4
