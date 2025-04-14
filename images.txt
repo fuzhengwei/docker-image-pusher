@@ -1,1 +1,4 @@
-n8nio/n8n:1.88.0
+xuxueli/xxl-job-admin:2.4.1
+xuxueli/xxl-job-admin:2.4.2
+xuxueli/xxl-job-admin:2.5.0
+xuxueli/xxl-job-admin:3.0.0
