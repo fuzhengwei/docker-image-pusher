@@ -1,4 +1,1 @@
-xuxueli/xxl-job-admin:2.4.1
-xuxueli/xxl-job-admin:2.4.2
-xuxueli/xxl-job-admin:2.5.0
-xuxueli/xxl-job-admin:3.0.0
+pgvector/pgvector:pg17
