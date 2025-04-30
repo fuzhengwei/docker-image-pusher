@@ -1,1 +1,1 @@
-pgvector/pgvector:pg17
+python:3.10.7-slim
