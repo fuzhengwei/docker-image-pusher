@@ -46,6 +46,7 @@ ollama/ollama:0.5.10 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio
 dpage/pgadmin4:9.1.0 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/pgadmin4:9.1.0
 n8nio/n8n:1.88.0 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/n8n:1.88.0
 pgvector/pgvector:pg17 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/pgvector:pg17
+apache/hadoop:2.10.2 -> docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/hadoop:2.10.2
 ```
 
 1. 在 `images.txt` 添加你需要的镜像（PR方式提交），你可以从 [https://hub.docker.com/](https://hub.docker.com/) 搜索需要的镜像后添加。
