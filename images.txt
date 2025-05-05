@@ -1,1 +1,1 @@
-redis:7.4.3
+apache/hadoop:2.10.2
