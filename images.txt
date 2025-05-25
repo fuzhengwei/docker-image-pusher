@@ -1,1 +1,1 @@
-apache/hadoop:2.10.2
+sonatype/nexus3:3.80.0-alpine
