@@ -1,1 +1,1 @@
-sonatype/nexus3:3.80.0-alpine
+openjdk:8-jre-slim
