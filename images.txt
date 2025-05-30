@@ -1,1 +1,1 @@
-openjdk:8-jre-slim
+node:18-alpine
