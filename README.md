@@ -50,6 +50,9 @@
 | 44   | apache/hadoop:2.10.2        | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/hadoop:2.10.2               |
 | 45   | openjdk:8-jre-slim          | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/openjdk:8-jre-slim          |
 | 46   | node:18-alpine              | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/node:18-alpine              |
+| 47   | openjdk:17-jdk-slim         | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/node:17-jdk-slim            |
+| 48   | openjdk:17-ea-17-jdk-slim-buster  | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/node:17-ea-17-jdk-slim-buster  |
+
 
 ```java
 portainer:latest
