@@ -1,1 +1,2 @@
-node:18-alpine
+openjdk:17-ea-17-jdk-slim-buster
+openjdk:17-jdk-slim
