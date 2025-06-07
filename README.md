@@ -9,7 +9,7 @@
 | 3    | mysql:8.4.4                 | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/mysql:8.4.4                 |
 | 4    | phpmyadmin:5.2.1            | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/phpmyadmin:5.2.1            |
 | 5    | redis:6.2                   | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/redis:6.2                   |
-| 6    | redis:7.2                   | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/redis:7.2                   |
+| 6    | redis:7.2/7.4.13                   | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/redis:7.2/7.4.13                   |
 | 7    | redis-commander:0.8.0       | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/redis-commander:0.8.0       |
 | 8    | rabbitmq:3.12.9             | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/rabbitmq:3.12.9             |
 | 9    | rocketmq:5.1.0              | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/rocketmq:5.1.0              |
