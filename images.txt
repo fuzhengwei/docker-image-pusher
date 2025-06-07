@@ -1,3 +1,1 @@
-elasticsearch:7.17.28
-logstash:7.17.28
-kibana:7.17.28
+logstash:7.17.14
