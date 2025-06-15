@@ -52,6 +52,7 @@
 | 46   | node:18-alpine              | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/node:18-alpine              |
 | 47   | openjdk:17-jdk-slim         | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/node:17-jdk-slim            |
 | 48   | openjdk:17-ea-17-jdk-slim-buster  | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/node:17-ea-17-jdk-slim-buster  |
+| 49   | mcp/grafana:latest  | docker pull registry.cn-hangzhou.aliycs.com/xfg-studio/mcp/grafana:latest  |
 
 
 ```java
