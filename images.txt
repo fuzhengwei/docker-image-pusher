@@ -1,1 +1,1 @@
-postgres:14.18
+prom/node-exporter:v1.9.1
