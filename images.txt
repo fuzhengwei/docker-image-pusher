@@ -1,1 +1,1 @@
-prom/node-exporter:v1.9.1
+fuzhengwei/moyu:1.0
