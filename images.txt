@@ -1,1 +1,1 @@
-sonatype/nexus3:3.75.1
+sonatype/nexus3:3.83.2-alpine
