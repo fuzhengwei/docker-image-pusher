@@ -54,7 +54,8 @@
 | 48   | openjdk:17-jdk-slim               | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/openjdk:17-jdk-slim |
 | 49   | openjdk:17-ea-17-jdk-slim-buster  | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/openjdk:17-ea-17-jdk-slim-buster |
 | 50   | mcp/grafana:latest                | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/mcp/grafana:latest |
-| 51   | postgres:14.18                    | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/mcp/postgres:14.18 |
+| 51   | postgres:14.18                    | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/postgres:14.18 |
+| 52   | httpsok/nginx:1.28.0-alpine       | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/nginx:1.28.0-alpine |
 
 ```java
 portainer:latest
