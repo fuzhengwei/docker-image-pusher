@@ -1,1 +1,1 @@
-nginx:1.29
+nacos/nacos-server:v3.1.1
