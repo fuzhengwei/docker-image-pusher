@@ -57,6 +57,7 @@
 | 51   | postgres:14.18                    | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/postgres:14.18 |
 | 52   | httpsok/nginx:1.28.0-alpine       | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/nginx:1.28.0-alpine |
 | 53   | nacos/nacos-server:v3.1.1         | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/nacos-server:v3.1.1  |
+| 54   | justsong/one-api:v0.6.10         | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio//one-api:v0.6.10  |
 
 ```java
 portainer:latest
