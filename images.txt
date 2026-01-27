@@ -1,1 +1,1 @@
-justsong/one-api:v0.6.10
+openjdk:8-jdk
