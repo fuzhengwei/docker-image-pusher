@@ -51,13 +51,15 @@
 | 45   | node:18-alpine                    | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/node:18-alpine |
 | 46   | node:20-alpine                    | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/node:20-alpine |
 | 47   | openjdk:8-jre-slim                | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/openjdk:8-jre-slim |
-| 48   | openjdk:17-jdk-slim               | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/openjdk:17-jdk-slim |
-| 49   | openjdk:17-ea-17-jdk-slim-buster  | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/openjdk:17-ea-17-jdk-slim-buster |
-| 50   | mcp/grafana:latest                | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/mcp/grafana:latest |
-| 51   | postgres:14.18                    | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/postgres:14.18 |
-| 52   | httpsok/nginx:1.28.0-alpine       | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/nginx:1.28.0-alpine |
-| 53   | nacos/nacos-server:v3.1.1         | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/nacos-server:v3.1.1  |
-| 54   | justsong/one-api:v0.6.10         | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/one-api:v0.6.10  |
+| 48   | openjdk:8-jdk                     | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/openjdk:8-jdk |
+| 49   | openjdk:17-jdk-slim               | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/openjdk:17-jdk-slim |
+| 50   | openjdk:17-ea-17-jdk-slim-buster  | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/openjdk:17-ea-17-jdk-slim-buster |
+| 51   | mcp/grafana:latest                | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/mcp/grafana:latest |
+| 52   | postgres:14.18                    | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/postgres:14.18 |
+| 53   | httpsok/nginx:1.28.0-alpine       | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/nginx:1.28.0-alpine |
+| 54   | nacos/nacos-server:v3.1.1         | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/nacos-server:v3.1.1  |
+| 55   | justsong/one-api:v0.6.10          | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/one-api:v0.6.10  |
+| 57   | hengyunabc/arthas:latest          | registry.cn-hangzhou.aliyuncs.com/xfg-studio/arthas:latest  |
 
 ```java
 portainer:latest
