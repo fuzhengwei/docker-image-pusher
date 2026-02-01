@@ -60,6 +60,7 @@
 | 54   | nacos/nacos-server:v3.1.1         | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/nacos-server:v3.1.1  |
 | 55   | justsong/one-api:v0.6.10          | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/one-api:v0.6.10  |
 | 57   | hengyunabc/arthas:latest          | registry.cn-hangzhou.aliyuncs.com/xfg-studio/arthas:latest  |
+| 58   | 1panel/openclaw:2026.1.29         | registry.cn-hangzhou.aliyuncs.com/xfg-studio/openclaw:2026.1.29  |
 
 ```java
 portainer:latest
