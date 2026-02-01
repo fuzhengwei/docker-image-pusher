@@ -1,1 +1,1 @@
-hengyunabc/arthas:latest
+1panel/openclaw:2026.1.30
