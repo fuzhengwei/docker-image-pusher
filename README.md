@@ -43,7 +43,7 @@
 | 37   | fatedier/frpc:v0.60.0             | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/frpc:v0.60.0 |
 | 38   | neowitch/moneyprinterturbo:latest | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/moneyprinterturbo:latest |
 | 39   | ankane/pgvector:v0.5.0            | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/pgvector:v0.5.0 |
-| 40   | ollama/ollama:0.5.10 | ollama/ollama:0.17.6 | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/ollama:0.5.10 | ollama/ollama:0.17.6 |
+| 40   | ollama/ollama:0.5.10 / ollama/ollama:0.17.6 | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/ollama:0.5.10 / ollama/ollama:0.17.6 |
 | 41   | dpage/pgadmin4:9.1.0              | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/pgadmin4:9.1.0 |
 | 42   | n8nio/n8n:1.88.0                  | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/n8n:1.88.0 |
 | 43   | pgvector/pgvector:pg17            | docker pull registry.cn-hangzhou.aliyuncs.com/xfg-studio/pgvector:pg17 |
