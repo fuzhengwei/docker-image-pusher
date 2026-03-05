@@ -1,1 +1,1 @@
-openclaw/openclaw:v1.8.0
+ollama/ollama:0.17.6
