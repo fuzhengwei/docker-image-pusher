@@ -1,1 +1,1 @@
-voicevox/voicevox_engine:cpu-latest
+oracle:19.19.0-ee-arm64
