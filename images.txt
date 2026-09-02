@@ -1,1 +1,1 @@
-fuzhengwei/waliapi:0.2.5-amd64
+fuzhengwei/walioffice:1.2.3
