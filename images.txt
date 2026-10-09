@@ -1,1 +1,1 @@
-fuzhengwei/walioffice:run-28
+fuzhengwei/toy-agent:1.0.0
