@@ -1,1 +1,1 @@
-fuzhengwei/toy-agent:1.0.0
+fuzhengwei/toy-agent:1.0.1
