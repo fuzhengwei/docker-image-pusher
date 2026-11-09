@@ -1,1 +1,1 @@
-fuzhengwei/toy-agent:1.0.6
+fuzhengwei/toy-agent:1.0.7
