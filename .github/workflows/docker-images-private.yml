@@ -75,10 +75,18 @@ jobs:
                   continue
               fi
             
-              echo "docker pull $line"
-              docker pull $line
+              # 解析 --platform 参数（默认 linux/amd64）
               platform=$(echo "$line" | awk -F'--platform[ =]' '{if (NF>1) print $2}' | awk '{print $1}')
               echo "platform is $platform"
+              pull_platform="$platform"
+              if [ -z "$pull_platform" ]; then
+                  pull_platform="linux/amd64"
+              fi
+              # 显式指定平台拉取：containerd 镜像存储下不带 --platform 会拉到整个 OCI index（含 attestation manifest），
+              # 推到私有仓库后镜像大小可能无法统计
+              image=$(echo "$line" | awk '{print $NF}')
+              echo "docker pull --platform $pull_platform $image"
+              docker pull --platform "$pull_platform" "$image"
               # 如果存在架构信息 将架构信息拼到镜像名称前面
               if [ -z "$platform" ]; then
                   platform_prefix=""
