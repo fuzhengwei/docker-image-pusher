@@ -82,11 +82,23 @@ jobs:
               if [ -z "$pull_platform" ]; then
                   pull_platform="linux/amd64"
               fi
-              # 显式指定平台拉取：containerd 镜像存储下不带 --platform 会拉到整个 OCI index（含 attestation manifest），
-              # 推到私有仓库后镜像大小可能无法统计
+              pull_os="${pull_platform%%/*}"
+              pull_arch="${pull_platform#*/}"
               image=$(echo "$line" | awk '{print $NF}')
-              echo "docker pull --platform $pull_platform $image"
-              docker pull --platform "$pull_platform" "$image"
+              # 先解析目标平台的单平台 manifest digest 再按 digest 拉取：
+              # containerd 镜像存储下 docker pull（即使带 --platform）也会保留整个 OCI index，
+              # tag+push 会把 index 原样推到仓库，导致一个 tag 多个 digest、镜像大小无法统计
+              digest=$(docker manifest inspect "$image" 2>/dev/null | jq -r --arg os "$pull_os" --arg arch "$pull_arch" '(.manifests[]? | select(.platform.os == $os and .platform.architecture == $arch) | .digest) // empty' | head -n1)
+
+              if [ -n "$digest" ]; then
+                  echo "resolved single manifest: $image@$digest"
+                  docker pull "$image@$digest"
+                  local_ref="$image@$digest"
+              else
+                  echo "source is a single manifest, docker pull --platform $pull_platform $image"
+                  docker pull --platform "$pull_platform" "$image"
+                  local_ref="$image"
+              fi
               # 如果存在架构信息 将架构信息拼到镜像名称前面
               if [ -z "$platform" ]; then
                   platform_prefix=""
@@ -118,23 +130,31 @@ jobs:
               new_image="$PRIVATE_REGISTRY/$platform_prefix$name_space_prefix$image_name_tag"
               latest_image="$PRIVATE_REGISTRY/$platform_prefix$name_space_prefix$image_name:latest"
             
-              echo "docker tag $image $new_image"
-              docker tag $image $new_image
+              echo "docker tag $local_ref $new_image"
+              docker tag "$local_ref" "$new_image"
               echo "docker push $new_image"
               docker push $new_image
-  
-              echo "docker tag $image $latest_image"
-              docker tag $image $latest_image
+
+              echo "docker tag $local_ref $latest_image"
+              docker tag "$local_ref" "$latest_image"
               echo "docker push $latest_image"
               docker push $latest_image
+
+              # 自检：确认推送的是单 manifest
+              pushed_media=$(docker manifest inspect "$new_image" 2>/dev/null | jq -r '.mediaType // ""')
+              echo "pushed $new_image mediaType: $pushed_media"
+              if [[ "$pushed_media" == *"index"* || "$pushed_media" == *"manifest.list"* ]]; then
+                  echo "::error::pushed image $new_image is still a multi-manifest index"
+                  exit 1
+              fi
             
               echo "开始清理磁盘空间"
               echo "=============================================================================="
             
               df -hT
               echo "=============================================================================="
-              docker rmi $image
-              docker rmi $new_image
+              docker rmi "$local_ref"
+              docker rmi "$new_image"
               echo "磁盘空间清理完毕"
               echo "=============================================================================="
               df -hT
